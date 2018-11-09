@@ -1,0 +1,20 @@
+{
+  "name": "use_webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config ./webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.1.5",
+    "babel-loader": "^8.0.4",
+    "snabbdom": "^0.7.2",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
