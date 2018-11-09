@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>[Snabbdom] todo-list</title>
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.2/snabbdom.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.2/snabbdom-attributes.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.2/snabbdom-class.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.2/snabbdom-props.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.2/snabbdom-style.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.2/snabbdom-eventlisteners.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.2/h.js"></script>
+    <!--
+        <script src="https://cdn.bootcss.com/snabbdom/0.7.2/snabbdom-dataset.js"></script>
+    -->
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.2/snabbdom-patch.js"></script>
+
+    <script>
+        var h = snabbdom.default.h;
+        var patch = snabbdom.default.patch;
+        var $app = document.querySelector('#app');
+
+        function liClickHandle() {
+            console.log('click');
+        }
+        var vnode = h(
+            'ul',
+            {
+                hook: {
+                    pre() {
+                        console.log('PreHook 1');
+                    },
+                    insert() {
+                        console.log('InsertHook 2');
+                    }
+                },
+                on: {
+                    click: liClickHandle
+                }
+            },
+            [h('li', {}, 'old 1'), h('li', {}, 'old 2'), h('li', {}, 'old 3')]
+        );
+        patch($app, vnode);
+
+        setTimeout(() => {
+            var newVnode = h('ul', {}, [
+                h('li', {}, 'new 1'),
+                h('li', {}, 'old 3')
+            ]);
+            patch(vnode, newVnode);
+        }, 1000);
+    </script>
+</html>
