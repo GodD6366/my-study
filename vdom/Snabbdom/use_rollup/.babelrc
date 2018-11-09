@@ -1,0 +1,23 @@
+{
+    "plugins": [
+        [
+            "@babel/plugin-transform-react-jsx",
+            {
+                "pragma": "h",
+                "throwIfNamespace": false
+            }
+        ]
+    ],
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "browsers": ["ie >= 8", "chrome >= 62"]
+                }
+            }
+        ]
+    ],
+    "comments": false,
+    "compact": false
+}

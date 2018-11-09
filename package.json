@@ -15,5 +15,7 @@
   "bugs": {
     "url": "https://github.com/GodD6366/my-study/issues"
   },
-  "homepage": "https://github.com/GodD6366/my-study#readme"
+  "homepage": "https://github.com/GodD6366/my-study#readme",
+  "devDependencies": {
+  }
 }
