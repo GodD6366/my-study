@@ -3,6 +3,8 @@ import _attributes from 'snabbdom/es/modules/attributes';
 import _class from 'snabbdom/es/modules/class';
 import _props from 'snabbdom/es/modules/props';
 import _style from 'snabbdom/es/modules/style';
+import _dataset from 'snabbdom/es/modules/dataset';
+import _hero from 'snabbdom/es/modules/hero';
 import _eventlisteners from 'snabbdom/es/modules/eventlisteners';
 
 export const patch = snabbdom.init([
@@ -10,6 +12,8 @@ export const patch = snabbdom.init([
     _class,
     _props,
     _style,
+    _dataset,
+    _hero,
     _eventlisteners
 ]);
 

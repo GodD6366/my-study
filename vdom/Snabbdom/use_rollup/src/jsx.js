@@ -7,18 +7,30 @@ function jsxTest() {
         return (
             <ul>
                 {list.map((i, idx) => (
-                    <li key={idx}>{i}</li>
+                    <li>{i}</li>
+                    // <li key={idx}>{i}</li>
                 ))}
             </ul>
         );
     }
-    var vnode = render([1, 2, 3]);
+    var vnode = render([
+        Math.random() * 1000,
+        Math.random() * 1000,
+        Math.random() * 1000
+    ]);
 
     patch($app, vnode);
 
-    setTimeout(() => {
-        patch(vnode, render([11, 2, 33]));
-    }, 1000);
+    setInterval(() => {
+        let arr = [];
+        arr.length = parseInt(Math.random() * 10, 10) + 1;
+        for (let index = 0; index < arr.length; index++) {
+            arr[index] = Math.random() * 1000;
+        }
+        let newVnode = render(arr);
+        patch(vnode, newVnode);
+        vnode = newVnode;
+    }, 2000);
 }
 
 export default jsxTest;

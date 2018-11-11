@@ -12,6 +12,12 @@ function normalTest() {
                     insert() {
                         console.log('InsertHook 2');
                     }
+                },
+                dataset: {
+                    name: '11'
+                },
+                hero: {
+                    id: 1111
                 }
             },
             list.map((i, idx) => {
