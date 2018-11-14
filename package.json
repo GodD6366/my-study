@@ -17,5 +17,6 @@
   },
   "homepage": "https://github.com/GodD6366/my-study#readme",
   "devDependencies": {
+    "prettier": "^1.15.2"
   }
 }
